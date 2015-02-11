@@ -26,8 +26,14 @@
    
     
     <icon src="icon.png" />
+	
 	<gap:splash src="splash.png" />
-    
+    <!-- iOS Splash Screens -->
+    <gap:splash src="res/splash/ios/Default.png"                       gap:platform="ios"       width="320" height="480" />
+    <gap:splash src="res/splash/ios/Default@2x.png"                    gap:platform="ios"       width="640" height="960" />
+    <gap:splash src="res/splash/ios/Default-568h@2x.png"               gap:platform="ios"       width="640" height="1136" />
+	
+	<!-- Plugin for background audio playing -->
    <gap:plugin name="nl.kingsquare.background-audio" />
     
     <access origin="*" />
