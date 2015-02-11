@@ -39,7 +39,10 @@
 <div data-role="none">
     <img src="images/pendimi-logo.png" style="width: 210px; margin-right:auto; margin-left:auto;display: block;padding-top: 30px;"/>
     <!-- AUDIO PLAYER -->
-    <p style="text-align:center;text-shadow:none; color:#333; margin:0px; padding-top:16px; padding-left: 5px; padding-right: 5px;">Jeni duke ndëgjuar: <span id="SHOUTcastSong"></span></p><br>
+    <p style="text-align:center; display:block">
+        <span>Kanali 1 - Jeni duke ndëgjuar:</span> <br/>
+        <span><iframe src="http://radio-pendimi.com/kanal-1-status.php" style="border:none; height:60px; width:100%;overflow:hidden;" ></iframe>
+    </p>
 <audio src="http://radio-pendimi.com:8000/;$type=mp3" id="player"></audio>
 <div style="text-align:center; margin-bottom: 10px"> <!-- Player controls start -->
     <span onclick="document.getElementById('player').play()" class="btn_control"> PLAY</span>
@@ -47,23 +50,12 @@
     <span onclick="document.getElementById('player').muted=!document.getElementById('player').muted" class="btn_control"> MUTE/UNMUTE</span>
     </div> <!-- Player controls end -->
     
-    <!-- Rubrikat kontaktuese -->
+	<!-- Rubrikat kontaktuese -->
     <div style="text-align:center;padding-top:5px">
         <p><a href="skype:radiopendimi?call" data-role="none" style="text-decoration:none"><span class="btn_control"><i class="fa fa-skype fa-lg"></i>  Thirr në Skype</span></a></p>
         <p><a href="tel:0041445869903" data-role="none" style="text-decoration:none"><span class="btn_control"><i class="fa fa-phone fa-lg"></i>  Thirr në telefon</span></a></p>
         <p><a href="#dergomesazh" data-role="none" style="text-decoration:none"><span class="btn_control"><i class="fa fa-comments-o fa-lg"></i>  Dërgo Mesazh</span></a></p>
     </div>
-	<div style="display:none"> <!-- unused stats -->
-		<h1>MixStream All-In-One StreamStats 1.1</h1>
-			<p>This is just an example of how you can use the script. View page source to see how easy it is! :)</p>
-			<p>Text outlined in <span>red</span> show the stats. This is just for display purposes - when you use the script, the stats will match the text on your page</p>
-			<hr>
-			<h2>SHOUTcastStatus: <span id="SHOUTcastStatus"></span></h2>
-			<p>Our stream is broadcasting at <span id="SHOUTcastBitrate"></span>kbps with <span id="SHOUTcastListeners"></span> listeners (<span id="SHOUTcastListenersUnique"></span> unique IPs). People have been listening for an average of <span id="SHOUTcastAverageListenTime"></span>.</p>
-			<p>The test server which this script is set up for supports <span id="SHOUTcastListenersMax"></span> listeners and has peaked at <span id="SHOUTcastListenersPeak"></span></p>
-			<p>The current song is <span id="SHOUTcastSong"></span>.
-			<p><span id="SHOUTcastTitle"></span> is streaming <span id="SHOUTcastGenre"></span> in <span id="SHOUTcastFormat"></span> forma 
-	</div>
 </div>
 <!-- footer -->
 <div data-role="footer" data-position="fixed" data-id="ap_footer">
@@ -125,7 +117,11 @@
 <!-- content -->
 <div data-role="none">
      <img src="images/pendimi-logo.png" style="width: 210px; margin-right:auto; margin-left:auto;display: block;padding-top: 30px;"/>
-<p style="text-align:center;text-shadow:none; color:#333; margin:0px; padding-top:16px; padding-left: 5px;padding-right: 5px;">Jeni duke ndëgjuar: <br><br>
+<p style="text-align:center;text-shadow:none; color:#333; margin:0px; padding-top:16px; padding-left: 5px;padding-right: 5px;">
+<p style="text-align:center; display:block">
+        <span>Kanali 2 - Jeni duke ndëgjuar:</span> <br/>  
+        <span><iframe src="http://radio-pendimi.com/kanal-2-status.php" style="border:none; height:20px; width:100%"></iframe>
+    </p>
 <audio src="http://radio-pendimi.com:8002/;$type=mp3" id="player-2"></audio>
 <div style="text-align:center">
     <span onclick="document.getElementById('player-2').play()" class="btn_control"> PLAY</span>
@@ -194,7 +190,7 @@
 <div data-role="none">
 <div id="ibacor_fb_content">
 <!-- Your facebook streaming -->
-<div class="ibacor_fb_streaming"></div>
+<div class="ibacor_fb_streaming" style="padding-top:30px"></div>
 </div>
 </div><!-- content -->
 <!-- footer -->
@@ -211,8 +207,9 @@
 </div>
 </div>
 <!-- End Page -->
+
     <script src="js/jquery.ibacor-fb-streaming.min.js"></script>
     <script src="js/index.js"></script>
-	<script src="http://radio-pendimi.com/stream-status/shoutcast.php"></script>
+	
 </body>
 </html>
