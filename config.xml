@@ -56,6 +56,8 @@
    <gap:plugin name="nl.kingsquare.background-audio" />
    <!-- Pushwoosh plugin -->
    <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.5" source="plugins.cordova.io" />
+   <gap:plugin name="org.apache.cordova.inappbrowser" />
+   <gap:plugin name="org.apache.cordova.device" />
     
     <access origin="*" />
 </widget>
