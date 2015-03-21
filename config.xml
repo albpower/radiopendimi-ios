@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.radiopendimi.app" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.radiopendimi.app" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Radio Pendimi</name>
     <description>
         Radio Pendimi - radio islame ne gjuhen shqipe
@@ -37,8 +37,10 @@
         <icon src="res/icon/ios/AppIcon76x76.png"        gap:platform="ios"        width="76" height="76" />
         <icon src="res/icon/ios/AppIcon40x40@2x.png"     gap:platform="ios"        width="80" height="80" />
         <icon src="res/icon/ios/AppIcon60x60@2x.png"     gap:platform="ios"        width="120" height="120" />       
-        <icon src="res/icon/ios/AppIcon76x76@2x.png"     gap:platform="ios"        width="152" height="152" />      
-
+        <icon src="res/icon/ios/AppIcon76x76@2x.png"     gap:platform="ios"        width="152" height="152" />
+		<!-- 8.0+ -->  
+		<icon src="res/icon/ios/AppIcon180x180.png"     gap:platform="ios"        width="180" height="180" />  
+		
         <!-- 6.1 -->
         <icon src="res/icon/ios/AppIcon50x50.png"        gap:platform="ios"        width="50" height="50" />
         <icon src="res/icon/ios/AppIcon72x72.png"        gap:platform="ios"        width="72" height="72" />     
@@ -51,11 +53,12 @@
     <gap:splash src="res/splash/ios/Default.png"                       gap:platform="ios"       width="320" height="480" />
     <gap:splash src="res/splash/ios/Default@2x.png"                    gap:platform="ios"       width="640" height="960" />
     <gap:splash src="res/splash/ios/Default-568h@2x.png"               gap:platform="ios"       width="640" height="1136" />
+	<gap:splash src="res/splash/ios/Default-1242x2208.png"               gap:platform="ios"       width="1242" height="2208" />
 	
 	<!-- Plugin for background audio playing -->
    <gap:plugin name="nl.kingsquare.background-audio" />
    <!-- Pushwoosh plugin -->
-   <gap:plugin name="com.pushwoosh.plugins.pushwoosh" source="plugins.cordova.io" />
+   <gap:plugin name="com.pushwoosh.plugins.pushwoosh"  source="plugins.cordova.io" />
    <gap:plugin name="org.apache.cordova.inappbrowser" />
    <gap:plugin name="org.apache.cordova.device" />
     
