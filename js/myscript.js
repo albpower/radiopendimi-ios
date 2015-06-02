@@ -1,3 +1,14 @@
+/* =============================================================================================================================================== */
+//Default transition
+function tranzicionet() { 
+    $.mobile.defaultPageTransition = "none";
+	//getYoutube();
+}
+
+var attachFastClick = Origami.fastclick;
+attachFastClick(document.body);
+
+
 /* Takvimi Shkup,Tirane,Prishtine  */
 function takvimiSK() {
     var data= {
@@ -644,9 +655,3 @@ function getYoutube(){
 }*/
 
 
-/* =============================================================================================================================================== */
-//Default transition
-function tranzicionet() { 
-    $.mobile.defaultPageTransition = "none";
-	//getYoutube();
-}
