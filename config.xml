@@ -56,9 +56,10 @@
 	<!-- Plugin for background audio playing -->
    <gap:plugin name="nl.kingsquare.background-audio" />
    <!-- Pushwoosh plugin -->
-   <gap:plugin name="com.pushwoosh.plugins.pushwoosh"  source="plugins.cordova.io" />
+   <gap:plugin name="pushwoosh-pgb-plugin" source="npm" />
+   
     <!-- Social Sharing plugin -->
-    <gap:plugin name="nl.x-services.plugins.socialsharing" source="plugins.cordova.io" />
+    <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
     
     <access origin="*" />
