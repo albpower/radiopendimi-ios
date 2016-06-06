@@ -9,27 +9,19 @@ var attachFastClick = Origami.fastclick;
 attachFastClick(document.body);
 
 
-/* =============================================================================================================================================== */
-//DergoMesazh
-function onSuccess(data, status)
-        {
-            data = $.trim(data);
-            $("#notification").text(data);
-        }
-  
-        function onError(data, status)
-        {
-            // handle an error
-        }        
-  
-        $(document).ready(function() {
-            $("#submit").click(function(){
+/* 
+================================================================================
+        Dergo Mesazh 
+================================================================================
+*/  
+ /*       $(document).ready(function() {
+            function dergoMesazh(){
   
                 var formData = $("#callAjaxForm").serialize();
-  
+                console.log(formData);
                 $.ajax({
                     type: "POST",
-                    url: "http://radio-pendimi.com/mobile/v2/send.php",
+                    url: "http://radio-pendimi.com/mobile/send.php",
                     crossDomain:true,
                     cache: false,
                     data: formData,
@@ -37,17 +29,33 @@ function onSuccess(data, status)
                     error: onError
                 });
 				return false;
-            });
-			$("#reset").click(function() {
+            }
+            
+            $("#reset").click(function() {
 				$('#callAjaxForm').trigger("reset");
 				$('#notification').text("");
 			});
-        }); //end
+            function onSuccess(data, status)
+            {
+                data = $.trim(data);
+                $("#notification").text(data);
+            }
 
+            function onError(data, status)
+            {
+                // handle an error
+            }
+            
+        });//end
 
+*/
 
-/* =============================================================================================================================================== */
-//Transmetime direkte
+/* 
+================================================================================
+    Transmetime Direkte (Youtube Events)
+================================================================================
+*/
+
 function broadcast(data){
 	if (data.items.length != 0){
 			var id,title;
