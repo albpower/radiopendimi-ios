@@ -19,12 +19,15 @@
     <!-- JS LIDHJET  -->
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script src="js/fastclick.min.js"></script>
 <script src="js/myscript.js"></script>
+<script src="js/app.js"></script>
+
 <!-- <script type="text/javascript" src="phonegap.js"></script> -->
 </head>
 
-<body style="font-family:Roboto" onload="tranzicionet();" >
+<body style="font-family:Roboto" onload="tranzicionet();" ng-app="App">
 
  <!-- Kanali 1 - homepage -->
 <div data-role="page" id="home" data-theme="b" style="min-height:100%;/*background: radial-gradient(circle, #9a4d61, #4b3a48);*/" >
@@ -68,14 +71,14 @@
     </div>
     <br>
     <div style="background: url('images/equalizer.png'); background-size:100%">
-        <img id="cc_strinfo_trackimageurl_kanali1" class="cc_streaminfo logo" style="width: 50%; background: #fff; margin: 20px auto; padding: 5px; display:block; min-height:170px; min-width:170px;"/>
+        <img id="cc_strinfo_trackimageurl_kanali1_main" class="cc_streaminfo logo" style="width: 50%; background: #fff; margin: 20px auto; padding: 5px; display:block; min-height:170px; min-width:170px;"/>
     </div>
     
     <!-- AUDIO PLAYER -->
     <div id="status-titulli"> 
         <span style="background:#6d4253; padding:8px; border-radius:8px"><i class="fa fa-signal fa-lg"></i>  Jeni duke dëgjuar:  <i class="fa fa-signal fa-lg fa-flip-horizontal"></i></span> 
         <br><br>
-			<span id="cc_strinfo_song_kanali1" class="cc_streaminfo"></span><br>
+			<span id="cc_strinfo_song_kanali1_main" class="cc_streaminfo"></span><br>
 			<!-- <div id="cc_recenttracks_kanali1" class="cc_recenttracks_list">Loading ...</div><br> -->
 	</div>
 	<div id="player" >
@@ -140,14 +143,14 @@
     </div>
     <br>
     <div style="background: url('images/equalizer.png'); background-size:100%">
-        <img id="cc_strinfo_trackimageurl_kanali2" class="cc_streaminfo logo" style="width: 50%; background: #fff; margin: 20px auto; padding: 5px; min-height:170px; min-width:170px; display:block;"/>
+        <img id="cc_strinfo_trackimageurl_kanali2_main" class="cc_streaminfo logo" style="width: 50%; background: #fff; margin: 20px auto; padding: 5px; min-height:170px; min-width:170px; display:block;"/>
     </div>
     
     <!-- AUDIO PLAYER -->
     <div id="status-titulli"> 
         <span style="background:#6d4253; padding:8px; border-radius:8px"><i class="fa fa-signal fa-lg"></i>  Jeni duke dëgjuar:  <i class="fa fa-signal fa-lg fa-flip-horizontal"></i></span> 
         <br><br>
-			<span id="cc_strinfo_song_kanali2" class="cc_streaminfo"></span><br>
+			<span id="cc_strinfo_song_kanali2_main" class="cc_streaminfo"></span><br>
 			<!-- <div id="cc_recenttracks_kanali1" class="cc_recenttracks_list">Loading ...</div><br> -->
 	</div>
 	<div id="player" >
@@ -261,7 +264,7 @@
     
 
 <!-- Dergo Mesazh -->
-<div data-role="page" id="dergomesazh" data-theme="b" style="min-height:100%;/*background: radial-gradient(circle, #9a4d61, #4b3a48);*/">
+<div data-role="page" id="dergomesazh" data-theme="b" style="min-height:100%;/*background: radial-gradient(circle, #9a4d61, #4b3a48);*/" ng-controller="KontaktCtrl">
 
     <!-- MENU Panel -->
   <div id="Menu5" data-role="panel" data-display="push"  style="background: linear-gradient(to bottom, #9a4d61, #4b3a48); border-right:solid 1px rgba(255,255,255,0.5);">
@@ -295,22 +298,23 @@
             <span>Dërgo Mesazh</span>
         </div>
      </div><br><br>
-    <form class="form" id="callAjaxForm">
+    <!--<form class="form" id="callAjaxForm">-->
 	<p class="name">
-        <input name="emri" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Emri" id="name" data-role="none"  />
+        <input name="emri" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Emri" id="name" data-role="none" ng-model="emri" />
       </p>
      
       <p class="text">
-        <textarea name="comment" class="validate[required,length[6,30]] feedback-input" id="comment" placeholder="Mesazhi" data-role="none" ></textarea>
+        <textarea name="comment" class="validate[required,length[6,30]] feedback-input" id="comment" placeholder="Mesazhi" data-role="none" ng-model="mesazhi"></textarea>
       </p>
       
       
       <div class="submit" style="margin: 0px 12px;">
-        <button id="submit" type="submit" >DËRGO</button>
-		<button id="reset" type="reset" >PASTRO FUSHAT</button>
+        <!--<button id="submit" type="submit" onclick="dergoMesazh();" >DËRGO</button>-->
+        <button id="submit" type="submit" ng-click="dergoMesazh();" >DËRGO</button>
+		<button id="reset" type="reset" ng-click="resetFields();" >PASTRO FUSHAT</button>
 	  </div>
-	   <h3 id="notification" align="center" style="font-color:green;"></h3>
-    </form>
+	   <h3 id="notification" align="center" style="font-color:green;">{{notification}}</h3>
+    <!--</form>-->
 </div>
 <!-- footer -->
 
