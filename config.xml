@@ -54,7 +54,7 @@
 	<gap:splash src="res/splash/ios/Default-1242x2208.png"               gap:platform="ios"       width="1242" height="2208" />
 	
 	<!-- Plugin for background audio playing -->
-   <gap:plugin name="nl.kingsquare.background-audio" />
+   <plugin name="nl.kingsquare.cordova.background-audio" source="npm" />
    <!-- Pushwoosh plugin -->
    <gap:plugin name="pushwoosh-pgb-plugin" source="npm" />
    
