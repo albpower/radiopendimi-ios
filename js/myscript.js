@@ -14,41 +14,46 @@ attachFastClick(document.body);
         Dergo Mesazh 
 ================================================================================
 */  
- /*       $(document).ready(function() {
-            function dergoMesazh(){
-  
-                var formData = $("#callAjaxForm").serialize();
-                console.log(formData);
-                $.ajax({
-                    type: "POST",
-                    url: "http://radio-pendimi.com/mobile/send.php",
-                    crossDomain:true,
-                    cache: false,
-                    data: formData,
-                    success: onSuccess,
-                    error: onError
-                });
-				return false;
-            }
-            
-            $("#reset").click(function() {
-				$('#callAjaxForm').trigger("reset");
-				$('#notification').text("");
-			});
-            function onSuccess(data, status)
-            {
-                data = $.trim(data);
-                $("#notification").text(data);
-            }
+        //     function dergoMesazh(){
+        //         var formData = $("#callAjaxForm").serialize();
+        //         console.log(formData);
+        //         $.ajax({
+        //             type: "POST",
+        //             url: "http://radio-pendimi.com/mobile/send.php",
+        //             crossDomain:true,
+        //             cache: false,
+        //             data: formData,
+        //             success: onSuccess,
+        //             error: onError
+        //         });
+		// 		return false;
+        //     }
 
-            function onError(data, status)
-            {
-                // handle an error
-            }
-            
-        });//end
+        //     function onSuccess(data, status)
+        //     {
+        //         data = $.trim(data);
+        //         $("#notification").text(data);
+        //     }
 
-*/
+        //     function onError(data, status)
+        //     {
+        //         // handle an error
+        //     }
+
+        // $("#reset").click(function() {
+		// 		$('#callAjaxForm').trigger("reset");
+		// 		$('#notification').text("");
+		// 	});
+        // $(document).ready(function() {
+            
+            
+            
+            
+            
+            
+        // });//end
+
+
 
 /* 
 ================================================================================
@@ -83,3 +88,47 @@ function getYoutube(){
 }*/
 
 
+/*=================================================
+	       ANGULAR APPLICATION
+==================================================*/
+var app = angular.module('APP',[]);
+
+app.controller("dergoMesazhCtrl",function($scope,$timeout,$http){
+	$scope.notification = "";
+	$scope.errorInput = false;
+
+	$scope.dergoMesazhin = function(){
+		if ($scope.emri != undefined && $scope.mesazhi != undefined){
+
+			var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            }
+    
+    $http.post('http://radio-pendimi.com/mobile/send-angular.php',{
+        'emri': $scope.emri,
+        'mesazhi': $scope.mesazhi,
+		'sistemiOperativ': "iOS APP"
+    },config).then(function(resp){
+		$scope.notification = resp.data.results;
+
+        $timeout(function(){
+            $scope.notification = "";
+        },3000);
+        
+        $scope.emri = "";
+        $scope.mesazhi = "";
+		});
+
+		} else {
+			 $scope.notification = "Ju lutemi plotësoni fushat e nevojshme dhe provoni përsëri!";
+			 $scope.errorInput = true;
+			  $timeout(function(){
+            $scope.notification = "";
+						$scope.errorInput = false;
+        },3000);
+		}
+	}
+
+})
